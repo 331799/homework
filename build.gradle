@@ -1,0 +1,30 @@
+group 'homework'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.testng', name: 'testng', version: '6.11'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.2'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.0.1'
+}
+
+task testAPI(type: Test){
+    useTestNG{
+        suites 'src/test/resources/testAPI.xml'
+    }
+}
+
+
+task testUI(type: Test){
+    useTestNG{
+        suites 'src/test/resources/testUI.xml'
+    }
+}

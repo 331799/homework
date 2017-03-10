@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.homework.test.api.ApiTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-03-09T23:15:19" hostname="DESKTOP-6HQNG6B" time="14.623">
+  <properties/>
+  <testcase name="apiTest" classname="com.homework.test.api.ApiTest" time="14.623"/>
+  <system-out><![CDATA[2017-03-10 01:15:30 INFO  ApiTest:53 - Amount of hotels: 78
+2017-03-10 01:15:30 INFO  ApiTest:58 - ProductId for Apartment Gaudelet: 53781
+2017-03-10 01:15:34 INFO  ApiTest:73 - Price: 472
+2017-03-10 01:15:34 INFO  ApiTest:74 - Quote: 472
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

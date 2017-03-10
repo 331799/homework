@@ -1,0 +1,7 @@
+<suite name="UI Suite" verbose="1" >
+    <test name="UI" >
+        <classes>
+            <class name="com.homework.test.ui.UiTest" />
+        </classes>
+    </test>
+</suite>

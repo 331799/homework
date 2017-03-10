@@ -1,0 +1,7 @@
+<suite name="API Suite" verbose="1" >
+    <test name="Api" >
+        <classes>
+            <class name="com.homework.test.api.ApiTest" />
+        </classes>
+    </test>
+</suite>
