@@ -16,10 +16,12 @@ public class CreateAdHelper extends HelperBase {
 
         if(isContactData){
             type(By.id("mapAddress"), model.getLocation());
+            click(By.id("autosuggest-geo-ul"));
+            type(By.id("add-person"), model.getContact());
         }
     }
 
-    public void postAdd(){
+    public void postAd(){
         click(By.id("save"));
     }
 }

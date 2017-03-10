@@ -41,6 +41,7 @@ public class ApiTest extends ApiBasicTestCase {
 
     @Test
     public void apiTest() throws MalformedURLException {
+        //get list of hotels
         Response response = given()
                 .accept(ContentType.JSON)
                 .when()
@@ -52,6 +53,7 @@ public class ApiTest extends ApiBasicTestCase {
         int quotesAmount = jsonPath.get("search_response.search_quotes.quote.size");
         logger.info("Amount of hotels: " + quotesAmount);
 
+        //find hotel product id
         for (int i = 0; i < quotesAmount; i++) {
             if (jsonPath.get("search_response.search_quotes.quote[" + i + "].productname").toString().equals(productName)) {
                 productId = jsonPath.get("search_response.search_quotes.quote[" + i + "].productid");
@@ -59,8 +61,10 @@ public class ApiTest extends ApiBasicTestCase {
             }
         }
 
+        //assert is hotel exist
         assertNotEquals(productId, 0);
 
+        //get quote by productId
         Response quoteResponse = given()
                 .accept(ContentType.JSON)
                 .when()
@@ -72,6 +76,8 @@ public class ApiTest extends ApiBasicTestCase {
         String price = quoteJsonPath.get("quotes.price").toString();
         logger.info("Price: " + price);
         logger.info("Quote: " + quote);
+
+        // assert quote == price
         assertEquals(quote, price);
     }
 }

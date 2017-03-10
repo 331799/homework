@@ -28,12 +28,7 @@ public class HelperBase {
     }
 
     protected void select(By locator, String text){
-        Select select = new Select(wd.findElement(locator));
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        select.selectByVisibleText(text);
+        click(locator);
+        click(By.linkText(text));
     }
 }

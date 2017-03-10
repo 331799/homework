@@ -13,8 +13,9 @@ public class RubricAnimalsHelper extends HelperBase {
 
     public void fillRubric(RubricAnimalModel model){
         type(By.name("data[param_price][1]"), model.getPrice());
-        select(By.id("param137"), model.getBreed());
         select(By.id("targetid_private_business"), model.getBusiness());
-        select(By.id("add-description"), model.getDescription());
+        select(By.id("targetparam153"), model.getBreed());
+        select(By.id("targetrenderSelect2-0"), model.getCurrency());
+        type(By.id("add-description"), model.getDescription());
     }
 }

@@ -6,12 +6,19 @@ public class RubricAnimalModel {
     private String breed;
     private String business;
     private String description;
+    private String currency;
+    private boolean isContractPrice;
 
     public RubricAnimalModel(){
     }
 
     public RubricAnimalModel withPrice(String price) {
         this.price = price;
+        return this;
+    }
+
+    public RubricAnimalModel withCurrency(String currency){
+        this.currency = currency;
         return this;
     }
 
@@ -30,6 +37,11 @@ public class RubricAnimalModel {
         return this;
     }
 
+    public RubricAnimalModel withContractPrice(boolean isContractPrice){
+        this.isContractPrice = isContractPrice;
+        return this;
+    }
+
     public String getPrice() {
         return price;
     }
@@ -44,5 +56,13 @@ public class RubricAnimalModel {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public boolean isContractPrice() {
+        return isContractPrice;
     }
 }

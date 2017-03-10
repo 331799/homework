@@ -1,5 +1,6 @@
 package com.homework.main.appmanager;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,6 +10,8 @@ import org.openqa.selenium.remote.BrowserType;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
+
+    public final static Logger logger = Logger.getLogger(ApplicationManager.class);
 
     public WebDriver wd;
     private String browser;
@@ -20,7 +23,7 @@ public class ApplicationManager {
     public ApplicationManager(String browser) {
         this.browser = browser;
         initWebDriver(this.browser);
-        wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     private void initWebDriver(String browserType) {
@@ -37,10 +40,12 @@ public class ApplicationManager {
             default:
                 wd = new FirefoxDriver();
         }
+        logger.info("Initiate webDriver for " + browserType);
     }
 
     public void init(){
         wd.get("https://www.olx.ua");
+        logger.info("Go to https://www.olx.ua page");
         sessionHelper = new SessionHelper(wd);
         navigatorHelper = new NavigatorHelper(wd);
         createAdHelper = new CreateAdHelper(wd);
